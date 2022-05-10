@@ -30,7 +30,7 @@ yargs.command({
 
     handler : function(argv){
     console.log("adding a new transaction", argv.title)
-    transactions.addTransaction(argv.title, argv.type, argv.token, argv.timestamp)
+    transactions.addTransaction(argv.title, argv.type, argv.token, new Date().toLocaleString())
     }
 })
 // console.log(yargs.argv)
