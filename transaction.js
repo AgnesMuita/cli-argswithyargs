@@ -1,13 +1,13 @@
 const fs = require('fs');
 
-const addTransaction = function(title, token, timestamp){
+const addTransaction = function(title,type, token, timestamp){
   const transactions = loadTransactions();  
   const duplicateTransaction = transactions.filter(function(transaction)
     {
-      return transaction.timestamp === timestamp;
+      return transaction.title === title;
     });
     if(duplicateTransaction.length==0){
-      transactions.push({title:title,token:token,timestamp:timestamp})
+      transactions.push({title:title,type:type,token:token,timestamp:timestamp})
       saveTransaction(transactions)
       console.log("New transaction added successfully")
     }

@@ -8,6 +8,10 @@ yargs.command({
 
     builder:{
       title:{
+        describe:"title of transaction",
+        type:'string'
+      },
+      type:{
         describe:"transaction type",  
         demandOption:true,
         type:"string"
@@ -19,13 +23,14 @@ yargs.command({
       },
       timestamp:{
         describe:"timestamp",
-        type:"dateTime"
-      }
+        type:"datetime"
+      },
+      
     },
 
     handler : function(argv){
     console.log("adding a new transaction", argv.title)
-    transactions.addTransaction(argv.title, argv.token, argv.timestamp)
+    transactions.addTransaction(argv.title, argv.type, argv.token, argv.timestamp)
     }
 })
 // console.log(yargs.argv)
