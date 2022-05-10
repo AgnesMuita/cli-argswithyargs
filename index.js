@@ -1,4 +1,5 @@
 const yargs = require("yargs")
+const transactions = require("./transaction")
 
 // console.log(yargs.argv)
 yargs.command({
@@ -15,11 +16,17 @@ yargs.command({
         describe:"token type",  
         demandOption:true,
         type:"string"
+      },
+      timestamp:{
+        describe:"timestamp",
+        type:"dateTime"
       }
     },
 
     handler : function(argv){
     console.log("adding a new transaction", argv.title)
+    transactions.addTransaction(argv.title, argv.token, argv.timestamp)
     }
 })
-console.log(yargs.argv)
+// console.log(yargs.argv)
+yargs.parse();
