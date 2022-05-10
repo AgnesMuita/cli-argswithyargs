@@ -1,7 +1,7 @@
 # command-line-arguments-with-yargs
 Utilize yargs to pass command line arguments in Node.js
 
-Clone the repo. 
+Clone the repo:
 git clone https://github.com/AgnesMuita/command-line-arguments-with-yargs/
 
 Run:
