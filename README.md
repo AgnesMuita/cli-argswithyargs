@@ -14,6 +14,7 @@ To add and save a new transaction:
 To remove a transaction:
 
 **node index.js add --title="ADDTITLE"**
+
 To list all transactions:
 
 **node index.js list**
