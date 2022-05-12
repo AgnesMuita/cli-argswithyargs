@@ -34,6 +34,7 @@ const removeTransaction = function(title){
     }
 }
 
+//list transactions
 const listTransactions = function(){
     const transactions = loadTransactions();
     transactions.forEach(element => {
@@ -41,6 +42,19 @@ const listTransactions = function(){
     });
     // console.log(transactions)
 }
+
+//read transactions
+const readTransactions = function(title){
+    const transactions = loadTransactions();
+    const transaction = transactions.find((transaction)=>transaction.title===title)
+    if(transaction){
+      console.log(transaction)
+    }else{
+      console.log("Transaction not found")
+    }
+}
+
+
 //loadTransactions returns an array
 const loadTransactions = function()
 {
@@ -63,5 +77,6 @@ const saveTransaction=function(transactions){
 module.exports = {
   addTransaction:addTransaction,
   removeTransaction:removeTransaction,  
-  listTransactions:listTransactions
+  listTransactions:listTransactions,
+  readTransactions:readTransactions
 }
