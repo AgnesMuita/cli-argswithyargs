@@ -27,7 +27,6 @@ const removeTransaction = function(title){
     if(removeTransaction.length ==1){
       var idx = transactions.indexOf(removeTransaction);
       transactions.splice(idx,1)
-      console.log(transactions)
       saveTransaction(transactions)
       console.log("Transaction deleted successfully")
     }else{
@@ -35,6 +34,13 @@ const removeTransaction = function(title){
     }
 }
 
+const listTransactions = function(){
+    const transactions = loadTransactions();
+    transactions.forEach(element => {
+        console.log("Transaction number: " + element.title + " with Token:" + element.token + " of amount:" + element.amount + " took place on:"+ element.timestamp)
+    });
+    // console.log(transactions)
+}
 //loadTransactions returns an array
 const loadTransactions = function()
 {
@@ -56,5 +62,6 @@ const saveTransaction=function(transactions){
 
 module.exports = {
   addTransaction:addTransaction,
-  removeTransaction:removeTransaction
+  removeTransaction:removeTransaction,  
+  listTransactions:listTransactions
 }
