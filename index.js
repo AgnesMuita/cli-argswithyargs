@@ -58,5 +58,20 @@ yargs.command({
     transactions.listTransactions()
     }
 })
+yargs.command({
+    command:"read",
+    describe:"read a transaction",
+    builder:{
+      title:{
+        describe:"title of transaction",
+        type:'string'
+      }      
+    },
+
+    handler : function(argv){
+    console.log("read a transaction",argv.title)
+    transactions.readTransactions(argv.title)
+    }
+})
 // console.log(yargs.argv)
 yargs.parse();
