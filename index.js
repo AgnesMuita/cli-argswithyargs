@@ -33,5 +33,21 @@ yargs.command({
     transactions.addTransaction(argv.title, argv.type, argv.token, new Date().toLocaleString())
     }
 })
+yargs.command({
+    command:"remove",
+    describe:"remove a transaction",
+
+    builder:{
+      title:{
+        describe:"title of transaction",
+        type:'string'
+      }      
+    },
+
+    handler : function(argv){
+    // console.log("removing a transaction", argv.title)
+    transactions.removeTransaction(argv.title)
+    }
+})
 // console.log(yargs.argv)
 yargs.parse();
