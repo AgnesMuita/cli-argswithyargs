@@ -45,8 +45,17 @@ yargs.command({
     },
 
     handler : function(argv){
-    // console.log("removing a transaction", argv.title)
+    console.log("removing a transaction", argv.title)
     transactions.removeTransaction(argv.title)
+    }
+})
+yargs.command({
+    command:"list",
+    describe:"list all transactions",
+
+    handler : function(argv){
+    console.log("list all transactions")
+    transactions.listTransactions()
     }
 })
 // console.log(yargs.argv)
