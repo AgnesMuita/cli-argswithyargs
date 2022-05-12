@@ -1,5 +1,6 @@
 const fs = require('fs');
-
+const allTransactions = [];
+//add  transaction
 const addTransaction = function(title,type, token, timestamp){
   const transactions = loadTransactions();  
   const duplicateTransaction = transactions.filter(function(transaction)
@@ -13,6 +14,24 @@ const addTransaction = function(title,type, token, timestamp){
     }
     else{
       console.log("Transaction already added")
+    }
+}
+
+//remove transaction
+const removeTransaction = function(title){
+    const transactions = loadTransactions();
+    const removeTransaction = transactions.filter(function(transaction)
+    {
+      return transaction.title === title
+    });
+    if(removeTransaction.length ==1){
+      var idx = transactions.indexOf(removeTransaction);
+      transactions.splice(idx,1)
+      console.log(transactions)
+      saveTransaction(transactions)
+      console.log("Transaction deleted successfully")
+    }else{
+      console.log('Transaction does not exist')
     }
 }
 
@@ -36,5 +55,6 @@ const saveTransaction=function(transactions){
 }
 
 module.exports = {
-  addTransaction:addTransaction
+  addTransaction:addTransaction,
+  removeTransaction:removeTransaction
 }
