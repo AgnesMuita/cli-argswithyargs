@@ -9,12 +9,13 @@ npm install
 
 To add and save a new transaction:
 
-node index.js add --title="ADDTITLE" --type="DEPOSIT/WITHDRAWAL" token="ETH/BTC/XRP"
+**node index.js add --title="ADDTITLE" --type="DEPOSIT/WITHDRAWAL" token="ETH/BTC/XRP"**
 
 To remove a transaction:
 
-node index.js add --title="ADDTITLE"
-
+**node index.js add --title="ADDTITLE"
+**
 To list all transactions:
 
-node index.js list
+**node index.js list
+**
