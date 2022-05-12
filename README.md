@@ -18,3 +18,7 @@ To remove a transaction:
 To list all transactions:
 
 **node index.js list**
+
+To read a specific transaction:
+
+**node index.js read --title="ADDTITLE"**
